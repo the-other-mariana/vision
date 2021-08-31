@@ -1,2 +1,4 @@
 ﻿  src.cpp
+C:\Users\mariana\Documents\github-mariana\vision\phase-shifting\src\src\src.cpp(23,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\phase-shifting\src\src\src.cpp(24,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   src.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\phase-shifting\src\x64\Debug\src.exe

@@ -6,6 +6,8 @@ Algorithms to perform Computer Vision related operations.
 
 OpenCV Version: `4.2.0`
 
+## Set Up
+
 - Download OpenCV from: https://opencv.org/releases/
 
 - Follow the guide at: https://towardsdatascience.com/install-and-configure-opencv-4-2-0-in-windows-10-vc-d132c52063a1 or at my repo: https://github.com/the-other-mariana/image-processing-algorithms for Visual Studio 2019 set up for an opencv development environment.
