@@ -5,18 +5,14 @@
 using namespace cv;
 int main()
 {
-    std::string image_path = samples::findFile("starry-night.jpg");
-    Mat img = imread(image_path, IMREAD_COLOR);
-    if (img.empty())
-    {
-        std::cout << "Could not read the image: " << image_path << std::endl;
-        return 1;
-    }
-    imshow("Display window", img);
-    int k = waitKey(0); // Wait for a keystroke in the window
-    if (k == 's')
-    {
-        imwrite("starry_night.png", img);
-    }
+    // CV_8UC3 depicts : (3 channels,8 bit image depth)
+    Mat img(1080, 1920, CV_8UC1, Scalar(255));
+
+    namedWindow("Image", WINDOW_AUTOSIZE);
+    imshow("Image", img);
+    waitKey(0);
+
+    destroyWindow("Image");
+
     return 0;
 }

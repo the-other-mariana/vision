@@ -1,5 +1,7 @@
 # Computer Vision Algorithms
 
+Algorithms to perform Computer Vision related operations.
+
 ## Specifications
 
 OpenCV Version: `4.2.0`
