@@ -24,11 +24,26 @@ int main()
         string file = "test-images/" + to_string(i + 1) + ".png";
         Mat img = imread(file, IMREAD_GRAYSCALE);
         threshold(img, imgs[i], 128, 255, THRESH_BINARY);
+    } 
 
+    Mat result(h, w, CV_8UC1, Scalar(255));
 
-        namedWindow(file, WINDOW_AUTOSIZE);
-        imshow(file, imgs[i]);
+    for (int i = 0; i < result.rows; i++) {
+        for (int j = 0; j < result.cols; j++) {
+            string byte = "";
+            for (int k = 0; k < size; k++) {
+                if (imgs[k].at<uchar>(i, j) == 255) byte += "1";
+                if (imgs[k].at<uchar>(i, j) == 0) byte += "0";
+            }
+            uchar pixel = static_cast<uchar>(stoi(byte, 0, 2));
+            result.at<uchar>(i, j) = pixel;
+        }
     }
+
+    namedWindow("result", WINDOW_AUTOSIZE);
+    imshow("result", result);
+    imwrite("../result.png", result);
+
     waitKey(0);
 
     return 0;
