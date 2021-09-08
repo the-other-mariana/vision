@@ -40,3 +40,9 @@ int main()
 ```
 
 *Note: make sure you have an image named starry-night.jpg in the same folder as the .cpp file.*
+
+## Content
+
+1. [Phase Shifting](https://github.com/the-other-mariana/vision/tree/master/phase-shifting)
+
+2. [Analyzing 8 images](https://github.com/the-other-mariana/vision/tree/master/8-images)
