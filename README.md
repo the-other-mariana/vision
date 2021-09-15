@@ -43,6 +43,8 @@ int main()
 
 ## Content
 
-1. [Phase Shifting](https://github.com/the-other-mariana/vision/tree/master/phase-shifting)
+1. [Gary Code Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/gray-code-pattern)
 
-2. [Analyzing 8 images](https://github.com/the-other-mariana/vision/tree/master/8-images)
+2. [8-bit & 10-bit Stack](https://github.com/the-other-mariana/vision/tree/master/bit-plane-stack)
+
+3. [Projector Calibration Papers](https://github.com/the-other-mariana/vision/tree/master/projector-calib-papers)

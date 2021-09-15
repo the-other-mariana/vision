@@ -1,0 +1,3 @@
+papers de calibracion de proyector para structured light
+
+Surface measurement by space-encoded projected beam systems
