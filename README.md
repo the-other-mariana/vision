@@ -43,7 +43,7 @@ int main()
 
 ## Content
 
-1. [Gary Code Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/gray-code-pattern)
+1. [Gray Code Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/gray-code-pattern)
 
 2. [8-bit & 10-bit Stack](https://github.com/the-other-mariana/vision/tree/master/bit-plane-stack)
 
