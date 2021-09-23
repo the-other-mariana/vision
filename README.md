@@ -48,3 +48,5 @@ int main()
 2. [8-bit & 10-bit Stack](https://github.com/the-other-mariana/vision/tree/master/bit-plane-stack)
 
 3. [Projector Calibration Papers](https://github.com/the-other-mariana/vision/tree/master/projector-calib-papers)
+
+4. [Sinusoidal Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/phase-shifting-sinusoidal-code)
