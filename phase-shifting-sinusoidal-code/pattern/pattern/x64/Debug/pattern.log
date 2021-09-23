@@ -1,5 +1,4 @@
 ﻿  pattern.cpp
-C:\Users\mariana\Documents\github-mariana\vision\phase-shifting-sinusoidal-code\pattern\pattern\pattern.cpp(19,33): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\mariana\Documents\github-mariana\vision\phase-shifting-sinusoidal-code\pattern\pattern\pattern.cpp(20,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\mariana\Documents\github-mariana\vision\phase-shifting-sinusoidal-code\pattern\pattern\pattern.cpp(26,25): warning C4244: 'initializing': conversion from 'float' to 'uchar', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\phase-shifting-sinusoidal-code\pattern\pattern\pattern.cpp(21,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\phase-shifting-sinusoidal-code\pattern\pattern\pattern.cpp(27,25): warning C4244: 'initializing': conversion from 'float' to 'uchar', possible loss of data
   pattern.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\phase-shifting-sinusoidal-code\pattern\x64\Debug\pattern.exe
