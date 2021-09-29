@@ -1,0 +1,6 @@
+﻿  circle-pattern.cpp
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-pattern\circle-pattern\circle-pattern.cpp(25,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-pattern\circle-pattern\circle-pattern.cpp(26,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-pattern\circle-pattern\circle-pattern.cpp(27,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-pattern\circle-pattern\circle-pattern.cpp(35,22): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  circle-pattern.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-pattern\x64\Debug\circle-pattern.exe
