@@ -24,8 +24,10 @@ string getFilename() {
 
 int main(int argc, char** argv)
 {
-    int w = 1152;
-    int h = 864;
+    const int w = 1152;
+    const int h = 864;
+    const int hCircles = 8;
+    const int vCircles = 6;
     Mat img = imread("pattern-photos/centered.jpg", 1);
     
 
@@ -36,7 +38,7 @@ int main(int argc, char** argv)
     //Canny(img, img, 50, 150, 3);
     GaussianBlur(img_gray, img_gray, Size(9, 9), 2, 2);
 
-    
+    vector<Vec2f> mtx1[hCircles][vCircles];
     vector<Vec3f> circles; // in std
     HoughCircles(img_gray, circles, HOUGH_GRADIENT, 1.5, 10, 100, 75, 30, 50);
 
