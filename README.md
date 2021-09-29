@@ -50,3 +50,5 @@ int main()
 3. [Projector Calibration Papers](https://github.com/the-other-mariana/vision/tree/master/projector-calib-papers)
 
 4. [Sinusoidal Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/phase-shifting-sinusoidal-code)
+
+5. [Centroid Detection for Camera Calibration](https://github.com/the-other-mariana/vision/tree/master/centroid-detection)
