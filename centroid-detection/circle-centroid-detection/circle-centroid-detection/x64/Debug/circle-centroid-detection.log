@@ -1,2 +1,38 @@
 ﻿  circle-centroid-detection.cpp
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection\circle-centroid-detection\circle-centroid-detection.cpp(51,33): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection\circle-centroid-detection\circle-centroid-detection.cpp(51,23): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection\circle-centroid-detection\circle-centroid-detection.cpp(59,42): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection\circle-centroid-detection\circle-centroid-detection.cpp(59,36): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
   circle-centroid-detection.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection\x64\Debug\circle-centroid-detection.exe

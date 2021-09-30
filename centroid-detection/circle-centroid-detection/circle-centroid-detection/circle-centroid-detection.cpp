@@ -29,7 +29,7 @@ int main(int argc, char** argv)
     const int hCircles = 8;
     const int vCircles = 6;
     Mat img = imread("pattern-photos/centered.jpg", 1);
-    
+    Mat centroids(h, w, CV_8UC3, Scalar(255,255,255));
 
     Size size(w, h);// aspect ratio 3:4
     resize(img, img, size);//resize image
@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     //Canny(img, img, 50, 150, 3);
     GaussianBlur(img_gray, img_gray, Size(9, 9), 2, 2);
 
-    vector<Vec2f> mtx1[hCircles][vCircles];
+    vector<Vec2f> centers_outer;
     vector<Vec3f> circles; // in std
     HoughCircles(img_gray, circles, HOUGH_GRADIENT, 1.5, 10, 100, 75, 30, 50);
 
@@ -47,18 +47,27 @@ int main(int argc, char** argv)
         Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
         int radius = cvRound(circles[i][2]);
         // circle center
-        circle(img, center, 3, Scalar(0, 255, 0), -1, 8, 0);
+        circle(img, center, 3, Scalar(255, 0, 255), -1, 8, 0);
+        Vec2f c(center.x, center.y);
+        centers_outer.push_back(c);
         // circle outline
         circle(img, center, radius, Scalar(255, 0, 255), 3, 8, 0);
     }
-    cout << circles.size() << endl;
+    
+    for (int i = 0; i < centers_outer.size(); i++) {
+        Vec2f p = centers_outer[i];
+        circle(centroids, Point(p[0], p[1]), 5, Scalar(255, 0, 255), -1, 8, 0);
+    }
 
     // timestamp for test img storing
     string filename = getFilename();
     cout << filename << endl;
 
-    namedWindow("Display Image", WINDOW_AUTOSIZE);
-    imshow("Display Image", img);
+    namedWindow("Centroids", WINDOW_AUTOSIZE);
+    imshow("Centroids", centroids);
+
+    namedWindow("Image", WINDOW_AUTOSIZE);
+    imshow("Image", img);
     imwrite(filename, img);
     waitKey(0);
 
