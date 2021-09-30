@@ -8,6 +8,22 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
 ![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-pattern/test.png)
 
+## Centroid Detection
+
+This step is to apply a Hough Transform to photographs of the printed pattern, in order to detect circles with a certain big range of radius (black circles), and those with the smaller range of radius (white circles). Then, their centroids are marked on a separate image to visualize the differences.
+
+Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection/circle-centroid-detection/circle-centroid-detection.cpp
+
+### Detected Centroids
+----
+
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection/circle-centroid-detection/tests/Wed%20Sep%2029%2021_57_08%202021-pattern.png?raw=true)
+
+### Marked Centroids
+----
+
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection/circle-centroid-detection/tests/Wed%20Sep%2029%2021_57_08%202021-centroids.png?raw=true)
+
 ## Handy Links
 
 - [OpenCV Flags](https://stackoverflow.com/questions/22547416/open-cv-flags-dont-work)
