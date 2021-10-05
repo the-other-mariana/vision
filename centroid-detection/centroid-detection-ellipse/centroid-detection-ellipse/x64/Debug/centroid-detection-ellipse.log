@@ -1,0 +1,74 @@
+﻿  centroid-detection-ellipse.cpp
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(69,59): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(69,45): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(70,65): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(70,51): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(79,59): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(79,45): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(80,65): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\centroid-detection-ellipse\centroid-detection-ellipse.cpp(80,51): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=float
+          ]
+          and
+          [
+              _Tp=int
+          ]
+  centroid-detection-ellipse.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\centroid-detection-ellipse\x64\Debug\centroid-detection-ellipse.exe
