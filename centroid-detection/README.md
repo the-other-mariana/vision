@@ -17,12 +17,12 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 ### Detected Centroids
 ----
 
-![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection/circle-centroid-detection/tests/Wed%20Sep%2029%2021_57_08%202021-pattern.png?raw=true)
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/patterns.png?raw=true)
 
 ### Marked Centroids
 ----
 
-![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection/circle-centroid-detection/tests/Wed%20Sep%2029%2021_57_08%202021-centroids.png?raw=true)
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/detections.png?raw=true)
 
 ## Handy Links
 
