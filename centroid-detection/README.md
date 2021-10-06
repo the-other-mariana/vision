@@ -19,6 +19,12 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
     - Source (2): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection-regions/circle-centroid-detection-regions/circle-centroid-detection-regions.cpp
 
+    - What is a **blob**? A blob is a group of connected pixels that share a property, like the grayscale value. 
+
+    - What is the **centroid** of a shape? It is the mean (average) of all the points, in this case pixels, in a shape.
+
+    ![\Large c=\frac{1}{n}\sum_{i=1}^{n}x_{i}](https://latex.codecogs.com/svg.latex?\Large&space;c=\frac{1}{n}\sum_{i=1}^{n}x_{i})
+
 3. The third option was to try and fit an ellipse to the found contours that once again fell in the estimated areas for outer and inner circles, and then mark the centers of both. This was similar to the previous step, which also works nice.
 
     - Source (3): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/centroid-detection-ellipse/centroid-detection-ellipse/centroid-detection-ellipse.cpp
