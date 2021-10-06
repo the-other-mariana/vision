@@ -25,6 +25,16 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
     ![\Large c=\frac{1}{n}\sum_{i=1}^{n}x_{i}](https://latex.codecogs.com/svg.latex?\Large&space;c=\frac{1}{n}\sum_{i=1}^{n}x_{i})
 
+    We find the center of a detected blob using **moments** in opencv:
+
+    ![\Large c_{x}=\frac{M_{10}}{M_{00}}](https://latex.codecogs.com/svg.latex?\Large&space;c_{x}=\frac{M_{10}}{M_{00}})
+
+    ![\Large c_{x}=\frac{M_{01}}{M_{00}}](https://latex.codecogs.com/svg.latex?\Large&space;c_{x}=\frac{M_{01}}{M_{00}})
+
+    Where the c_x and c_y are the x and y coordinates.
+
+    The M_10 refers to the calculation that, for every white pixel, the accumulated value is j^1 * i^0 * (pixel / 255). Corresponding subindex refer to the power to which j and i are elevated.
+
 3. The third option was to try and fit an ellipse to the found contours that once again fell in the estimated areas for outer and inner circles, and then mark the centers of both. This was similar to the previous step, which also works nice.
 
     - Source (3): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/centroid-detection-ellipse/centroid-detection-ellipse/centroid-detection-ellipse.cpp
@@ -58,3 +68,13 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 - [Fit Ellipse](https://stackoverflow.com/questions/28835644/ambiguity-in-ellipse-detection-in-opencv-c)
 
 - [Rotated Rect](https://vovkos.github.io/doxyrest-showcase/opencv/sphinx_rtd_theme/class_cv_RotatedRect.html)
+
+- [MD Eq](https://www.codecogs.com/latex/eqneditor.php)
+
+- [Contours Func](https://docs.opencv.org/4.5.3/dd/d49/tutorial_py_contour_features.html)
+
+- [Find Contours](https://docs.opencv.org/3.4.15/d3/dc0/group__imgproc__shape.html#ga17ed9f5d79ae97bd4c7cf18403e1689a)
+
+- [moments()](https://docs.opencv.org/4.5.3/d3/dc0/group__imgproc__shape.html#ga556a180f43cab22649c23ada36a8a139)
+
+- [Moments Structure](https://docs.opencv.org/4.5.3/d8/d23/classcv_1_1Moments.html#a8b1b4917d1123abc3a3c16b007a7319b)
