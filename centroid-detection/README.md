@@ -29,7 +29,7 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
     ![\Large c_{x}=\frac{M_{10}}{M_{00}}](https://latex.codecogs.com/svg.latex?\Large&space;c_{x}=\frac{M_{10}}{M_{00}})
 
-    ![\Large c_{x}=\frac{M_{01}}{M_{00}}](https://latex.codecogs.com/svg.latex?\Large&space;c_{x}=\frac{M_{01}}{M_{00}})
+    ![\Large c_{y}=\frac{M_{01}}{M_{00}}](https://latex.codecogs.com/svg.latex?\Large&space;c_{y}=\frac{M_{01}}{M_{00}})
 
     Where the c_x and c_y are the x and y coordinates.
 

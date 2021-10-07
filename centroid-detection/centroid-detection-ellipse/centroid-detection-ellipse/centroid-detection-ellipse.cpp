@@ -34,7 +34,7 @@ int main(int argc, char** argv)
     int inMax = 1500;
 
     string pics[3] = { "center.jpg", "side-tilt.jpg", "front-tilt.jpg" };
-    Mat img = imread("pattern-photos/" + pics[2], 1);
+    Mat img = imread("pattern-photos/" + pics[1], 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
     Size size(w, h);// aspect ratio 3:4
