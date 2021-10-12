@@ -30,11 +30,12 @@ int main(int argc, char** argv)
     const int vCircles = 6;
 
     int outMax = 7000;
-    int outMin = 2000;
-    int inMax = 1500;
+    int outMin = 1450;
+    int inMax = 1400;
+    int inMin = 12;
 
     string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
-    Mat img = imread("pattern-photos/" + pics[2], 1);
+    Mat img = imread("pattern-photos/" + pics[0], 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
     Size size(w, h);// aspect ratio 3:4
@@ -66,7 +67,7 @@ int main(int argc, char** argv)
             outerMoments[i] = moments(contours[i], false);
             //cout << "Outer: " << contourArea(contours[i]) << endl;
         }
-        if (contourArea(contours[i]) < inMax) {
+        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin) {
             innerMoments[i] = moments(contours[i], false);
             //cout << "Inner: " << contourArea(contours[i]) << endl;
         }
@@ -94,7 +95,7 @@ int main(int argc, char** argv)
             drawMarker(img, oc[i], Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
             drawMarker(centroids, oc[i], Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
         }
-        if (contourArea(contours[i]) < inMax) {
+        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin) {
             Scalar color = Scalar(255, 0, 0);
             drawContours(img, contours, i, color, 2, 8, hierarchy, 0, Point());
             drawMarker(img, ic[i], Scalar(255, 0, 0), MARKER_CROSS, 10, 2, 8);
