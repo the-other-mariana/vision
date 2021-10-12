@@ -3,6 +3,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <string>
 
 #include <ctime>
 #pragma warning(disable : 4996)// tells c++ that ctime is safe
@@ -35,7 +37,7 @@ int main(int argc, char** argv)
     int inMin = 12;
 
     string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
-    Mat img = imread("pattern-photos/" + pics[0], 1);
+    Mat img = imread("pattern-photos/" + pics[1], 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
     Size size(w, h);// aspect ratio 3:4
@@ -57,7 +59,8 @@ int main(int argc, char** argv)
     // find contours
     findContours(canny_output, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0));
 
-
+    vector<Point2f> op;
+    vector<Point2f> ip;
     for (size_t i = 0; i < contours.size(); i++)
     {
         if (contourArea(contours[i]) < outMax && contourArea(contours[i]) > outMin) {
@@ -66,6 +69,7 @@ int main(int argc, char** argv)
             RotatedRect box = fitEllipse(pointsf);
             Point2f rectCenter = box.center;
 
+            op.push_back(rectCenter);
             ellipse(img, box, Scalar(255, 0, 255), 2, 8);
             drawMarker(img, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
             drawMarker(centroids, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
@@ -76,6 +80,7 @@ int main(int argc, char** argv)
             RotatedRect box = fitEllipse(pointsf);
             Point2f rectCenter = box.center;
 
+            ip.push_back(rectCenter);
             ellipse(img, box, Scalar(255, 0, 0), 2, 8);
             drawMarker(img, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 0), MARKER_CROSS, 10, 2, 8);
             drawMarker(centroids, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 0), MARKER_CROSS, 10, 2, 8);
@@ -83,6 +88,16 @@ int main(int argc, char** argv)
         
     }
 
+    ofstream out("ellipse.txt");
+    for (int i = 0; i < op.size(); i++) {
+        cout << i << op[i].x << ", " << op[i].y << endl;
+        cout << i << ip[i].x << ", " << ip[i].y << endl;
+        string is = to_string(ip[i].x) + ";" + to_string(ip[i].y) + "\n";
+        string os = to_string(op[i].x) + ";" + to_string(op[i].y) + "\n";
+        out << is;
+        out << os;
+    }
+    out.close();
 
     // timestamp for test img storing
     string patternImg = getFilename("pattern");

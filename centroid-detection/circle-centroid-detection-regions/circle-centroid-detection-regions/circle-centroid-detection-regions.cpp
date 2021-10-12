@@ -3,6 +3,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <string>
 
 #include <ctime>
 #pragma warning(disable : 4996)// tells c++ that ctime is safe
@@ -35,7 +37,7 @@ int main(int argc, char** argv)
     int inMin = 12;
 
     string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
-    Mat img = imread("pattern-photos/" + pics[0], 1);
+    Mat img = imread("pattern-photos/" + pics[1], 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
     Size size(w, h);// aspect ratio 3:4
@@ -86,17 +88,21 @@ int main(int argc, char** argv)
     }
 
     // draw contours
+    vector<Point2f> op;
+    vector<Point2f> ip;
     Mat drawing(canny_output.size(), CV_8UC3, Scalar(255, 255, 255));
     for (int i = 0; i < contours.size(); i++)
     {
         if (contourArea(contours[i]) < outMax && contourArea(contours[i]) > outMin) {
             Scalar color = Scalar(255, 0, 255);
+            op.push_back(oc[i]);
             drawContours(img, contours, i, color, 2, 8, hierarchy, 0, Point());
             drawMarker(img, oc[i], Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
             drawMarker(centroids, oc[i], Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
         }
         if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin) {
             Scalar color = Scalar(255, 0, 0);
+            ip.push_back(ic[i]);
             drawContours(img, contours, i, color, 2, 8, hierarchy, 0, Point());
             drawMarker(img, ic[i], Scalar(255, 0, 0), MARKER_CROSS, 10, 2, 8);
             drawMarker(centroids, ic[i], Scalar(255, 0, 0), MARKER_CROSS, 10, 2, 8);
@@ -104,8 +110,16 @@ int main(int argc, char** argv)
 
     }
 
-
-
+    ofstream out("regions.txt");
+    for (int i = 0; i < op.size(); i++) {
+        cout << i << op[i].x << ", " << op[i].y << endl;
+        cout << i << ip[i].x << ", " << ip[i].y << endl;
+        string is = to_string(ip[i].x) + ";" + to_string(ip[i].y) + "\n";
+        string os = to_string(op[i].x) + ";" + to_string(op[i].y) + "\n";
+        out << is;
+        out << os;
+    }
+    out.close();
     // timestamp for test img storing
     string patternImg = getFilename("pattern");
     string centroidImg = getFilename("centroids");
