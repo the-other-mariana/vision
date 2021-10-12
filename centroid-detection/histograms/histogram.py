@@ -50,9 +50,10 @@ for f in range(3):
                 err.append(dist)
     print(err)
 
-    intervals = np.linspace(min(err), max(err) * 1.5, bars)
-    intervals = list(intervals)
-    intervals = [0.0] + intervals
+    if f == 0:
+        intervals = np.linspace(min(err), max(err) * 1.5, bars)
+        intervals = list(intervals)
+        intervals = [0.0] + intervals
 
     heights = [0 for i in intervals[1:]]
     xs = list(range(len(heights)))
