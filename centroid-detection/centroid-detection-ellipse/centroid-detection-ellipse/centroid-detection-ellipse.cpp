@@ -30,11 +30,12 @@ int main(int argc, char** argv)
     const int vCircles = 6;
 
     int outMax = 7000;
-    int outMin = 2000;
-    int inMax = 1500;
+    int outMin = 1450;
+    int inMax = 1400;
+    int inMin = 12;
 
-    string pics[3] = { "center.jpg", "side-tilt.jpg", "front-tilt.jpg" };
-    Mat img = imread("pattern-photos/" + pics[1], 1);
+    string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
+    Mat img = imread("pattern-photos/" + pics[0], 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
     Size size(w, h);// aspect ratio 3:4
@@ -69,7 +70,7 @@ int main(int argc, char** argv)
             drawMarker(img, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
             drawMarker(centroids, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
         }
-        if (contourArea(contours[i]) < inMax) {
+        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin) {
             Mat pointsf;
             Mat(contours[i]).convertTo(pointsf, CV_32F);
             RotatedRect box = fitEllipse(pointsf);
