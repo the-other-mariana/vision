@@ -3,6 +3,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <string>
 
 #include <ctime>
 #pragma warning(disable : 4996)// tells c++ that ctime is safe
@@ -36,7 +38,7 @@ int main(int argc, char** argv)
     int inMax = 1500;
 
     string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
-    Mat img = imread("pattern-photos/" + pics[2], 1);
+    Mat img = imread("pattern-photos/" + pics[1], 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
     Size size(w, h);// aspect ratio 3:4
@@ -61,12 +63,14 @@ int main(int argc, char** argv)
     params1.filterByInertia = false;
     vector<KeyPoint> pts_inner;
     Ptr<SimpleBlobDetector> detector1 = SimpleBlobDetector::create(params1);
+    Point2f ip[48];
 
     bitwise_not(img_gray, img_gray_inv);
     detector1->detect(img_gray, pts_inner);
     for (int i = 0; i < pts_inner.size(); i++) {
         KeyPoint k = pts_inner[i];
         Point center = Point(k.pt.x, k.pt.y);
+        ip[i] = k.pt;
         Scalar color = Scalar(250, 250, 250);
         circle(img, center, k.size / 2.0, colorInner, 2, 8, 0);
         drawMarker(img, center, colorInner, MARKER_TILTED_CROSS, 10, 2, 8);
@@ -88,17 +92,29 @@ int main(int argc, char** argv)
     params2.filterByInertia = false;
     vector<KeyPoint> pts_outer;
     Ptr<SimpleBlobDetector> detector2 = SimpleBlobDetector::create(params2);
+    Point2f op[48];
 
     detector2->detect(img_gray_inv, pts_outer);
     for (int i = 0; i < pts_outer.size(); i++) {
         KeyPoint k = pts_outer[i];
         Point center = Point(k.pt.x, k.pt.y);
+        op[i] = k.pt;
         circle(img, center, k.size / 2.0, colorOuter, 2, 8, 0);
         drawMarker(img, center, colorOuter, MARKER_CROSS, 10, 2, 8);
         drawMarker(centroids, center, colorOuter, MARKER_CROSS, 10, 2, 8);
     }
 
+    ofstream out("blobs.txt");
 
+    for (int i = 0; i < 48; i++) {
+        cout << i << " " << ip[i].x << ", " << ip[i].y << endl;
+        cout << i << " " << op[i].x << ", " << op[i].y << endl;
+        string is = to_string(ip[i].x) + ";" + to_string(ip[i].y) + "\n";
+        string os = to_string(op[i].x) + ";" + to_string(op[i].y) + "\n";
+        out << is;
+        out << os;
+    }
+    out.close();
     // timestamp for test img storing
     string patternImg = getFilename("pattern");
     string centroidImg = getFilename("centroids");
