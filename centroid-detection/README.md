@@ -49,6 +49,18 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
 ![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/detections.png?raw=true)
 
+## Error Plot
+
+If we compute the difference between both detected centroids in each of the three approaches, we will get an estimated error. Now, if we plot an histogram of these continuous error values by dividing the range in intervals and recording the frecuency of these errors inside the intervals, we would get the following plots. In this way, we can observe the distributions of the errors within the three 'equivalent' approaches.
+
+### Grid Form
+
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/histograms/plots-grid.png?raw=true)
+
+### Single Plot Form
+
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/histograms/sidebars.png?raw=true)
+
 ## Handy Links
 
 - [OpenCV Flags](https://stackoverflow.com/questions/22547416/open-cv-flags-dont-work)
