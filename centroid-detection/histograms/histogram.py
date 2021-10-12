@@ -3,6 +3,8 @@ import matplotlib as mpl
 from math import sqrt
 import numpy as np
 
+bars = 20
+
 def distance(p1, p2):
     return sqrt((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2)
 
@@ -30,7 +32,7 @@ for i in range(len(inner_c)):
             err.append(dist)
 print(err)
 
-intervals = np.linspace(min(err), max(err) * 1.5, 10)
+intervals = np.linspace(min(err), max(err) * 1.5, bars)
 intervals = list(intervals)
 intervals = [0.0] + intervals
 heights = [0 for i in intervals[1:]]
