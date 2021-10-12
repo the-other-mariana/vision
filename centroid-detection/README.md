@@ -78,3 +78,11 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 - [moments()](https://docs.opencv.org/4.5.3/d3/dc0/group__imgproc__shape.html#ga556a180f43cab22649c23ada36a8a139)
 
 - [Moments Structure](https://docs.opencv.org/4.5.3/d8/d23/classcv_1_1Moments.html#a8b1b4917d1123abc3a3c16b007a7319b)
+
+- [Ellipse Detection Opencv Python](https://stackoverflow.com/questions/42206042/ellipse-detection-in-opencv-python)
+
+- [skimage Hough Ellipse](https://www.kite.com/python/docs/skimage.transform.hough_ellipse)
+
+- [Blobs with Detector](https://learnopencv.com/blob-detection-using-opencv-python-c/)
+
+- [Detector Docs](https://docs.opencv.org/4.5.3/d0/d7a/classcv_1_1SimpleBlobDetector.html)

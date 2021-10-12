@@ -1,41 +1,22 @@
 ﻿  circle-centroid-detection-regions.cpp
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(69,42): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(79,88): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=float
           ]
-          and
-          [
-              _Tp=int
-          ]
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(69,34): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(79,45): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=float
           ]
-          and
-          [
-              _Tp=int
-          ]
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(71,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(74,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(95,42): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(84,88): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=float
           ]
-          and
-          [
-              _Tp=int
-          ]
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(95,34): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(84,45): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=float
           ]
-          and
-          [
-              _Tp=int
-          ]
-C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\circle-centroid-detection-regions\circle-centroid-detection-regions.cpp(96,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   circle-centroid-detection-regions.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\centroid-detection\circle-centroid-detection-regions\x64\Debug\circle-centroid-detection-regions.exe
