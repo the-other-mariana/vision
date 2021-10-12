@@ -93,14 +93,14 @@ int main(int argc, char** argv)
     Mat drawing(canny_output.size(), CV_8UC3, Scalar(255, 255, 255));
     for (int i = 0; i < contours.size(); i++)
     {
-        if (contourArea(contours[i]) < outMax && contourArea(contours[i]) > outMin) {
+        if (contourArea(contours[i]) < outMax && contourArea(contours[i]) > outMin && i % 2 == 0) {
             Scalar color = Scalar(255, 0, 255);
             op.push_back(oc[i]);
             drawContours(img, contours, i, color, 2, 8, hierarchy, 0, Point());
             drawMarker(img, oc[i], Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
             drawMarker(centroids, oc[i], Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
         }
-        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin) {
+        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin && i % 2 == 0) {
             Scalar color = Scalar(255, 0, 0);
             ip.push_back(ic[i]);
             drawContours(img, contours, i, color, 2, 8, hierarchy, 0, Point());

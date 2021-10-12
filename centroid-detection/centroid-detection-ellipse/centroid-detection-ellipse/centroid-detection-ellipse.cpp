@@ -63,7 +63,7 @@ int main(int argc, char** argv)
     vector<Point2f> ip;
     for (size_t i = 0; i < contours.size(); i++)
     {
-        if (contourArea(contours[i]) < outMax && contourArea(contours[i]) > outMin) {
+        if (contourArea(contours[i]) < outMax && contourArea(contours[i]) > outMin && i % 2 == 0) {
             Mat pointsf;
             Mat(contours[i]).convertTo(pointsf, CV_32F);
             RotatedRect box = fitEllipse(pointsf);
@@ -74,7 +74,7 @@ int main(int argc, char** argv)
             drawMarker(img, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
             drawMarker(centroids, Point(rectCenter.x, rectCenter.y), Scalar(255, 0, 255), MARKER_TILTED_CROSS, 10, 2, 8);
         }
-        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin) {
+        if (contourArea(contours[i]) < inMax && contourArea(contours[i]) > inMin && i % 2 == 0) {
             Mat pointsf;
             Mat(contours[i]).convertTo(pointsf, CV_32F);
             RotatedRect box = fitEllipse(pointsf);
