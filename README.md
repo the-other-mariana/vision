@@ -45,12 +45,24 @@ int main()
 
 1. [Gray Code Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/gray-code-pattern)
 
+![img](https://github.com/the-other-mariana/vision/blob/master/gray-code-pattern/out.png?raw=true)
+
 2. [8-bit & 10-bit Stack](https://github.com/the-other-mariana/vision/tree/master/bit-plane-stack)
+
+![img](https://github.com/the-other-mariana/vision/blob/master/bit-plane-stack/src/result.png?raw=true)
 
 3. [Projector Calibration Papers](https://github.com/the-other-mariana/vision/tree/master/projector-calib-papers)
 
 4. [Sinusoidal Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/phase-shifting-sinusoidal-code)
 
+![img](https://github.com/the-other-mariana/vision/blob/master/phase-shifting-sinusoidal-code/pattern/zero.png?raw=true)
+
 5. [Pattern Detection for Camera Calibration](https://github.com/the-other-mariana/vision/tree/master/centroid-detection)
 
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/patterns.png?raw=true)
+
+![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/detections.png?raw=true)
+
 5. [Pattern Detection Algorithm Evaluation](https://github.com/the-other-mariana/vision/tree/master/algorithm-evaluation)
+
+![img](https://github.com/the-other-mariana/vision/blob/master/algorithm-evaluation/histograms/out/condensed-side-tilt.png?raw=true)
