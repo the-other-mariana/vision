@@ -33,10 +33,10 @@ int main(int argc, char** argv)
     Scalar colorOuter = Scalar(255, 0, 255);
     Scalar colorInner = Scalar(255, 0, 0);
 
-    int limit = 900;
+    int limit = 1600;
 
     string pics[5] = { "center", "front45", "front60", "side4504", "side60" };
-    string option = pics[1];
+    string option = pics[0];
     Mat img = imread("test-renders/" + option + ".png", 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
@@ -73,11 +73,12 @@ int main(int argc, char** argv)
         Point center = Point(k.pt.x, k.pt.y);
         ip[i] = k.pt;
         Scalar color = Scalar(250, 250, 250);
-        circle(img, center, k.size / 2.0, colorInner, 2, 8, 0);
+        circle(img, ip[i], k.size / 2.0, colorInner, 2, 8, 0);
         drawMarker(img, center, colorInner, MARKER_TILTED_CROSS, 10, 2, 8);
         drawMarker(centroids, center, colorInner, MARKER_TILTED_CROSS, 10, 2, 8);
-        circle(img_gray_inv, center, k.size * 0.70, color, FILLED, 8, 0);
-
+        // comment this on center
+        //circle(img_gray_inv, ip[i], k.size * 0.70, color, FILLED, 8, 0);
+        cout << "Pt: " << ip[i].x << " " << ip[i].y << endl;
     }
 
     // outer circles: magenta
@@ -104,7 +105,7 @@ int main(int argc, char** argv)
         drawMarker(img, center, colorOuter, MARKER_CROSS, 10, 2, 8);
         drawMarker(centroids, center, colorOuter, MARKER_CROSS, 10, 2, 8);
     }
-
+    
     ofstream out("blobs" + option + ".txt");
 
     for (int i = 0; i < 48; i++) {
@@ -116,6 +117,7 @@ int main(int argc, char** argv)
         out << os;
     }
     out.close();
+    
     // timestamp for test img storing
     string patternImg = getFilename("pattern");
     string centroidImg = getFilename("centroids");
