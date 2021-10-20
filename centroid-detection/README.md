@@ -14,12 +14,19 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
     - Source (1): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection/circle-centroid-detection/circle-centroid-detection.cpp
 
+Status: Not Considered
 
-2. The second option is to use the concept of Blobs, which is similar to Region Detection, and through an area threshold applied to the contours found on the photo, mark it as either an outer centroid or an inner centroid. This process seemed to work nice.
+2. The second option is to use the concept of Blobs, and for that opencv has a structure called SimpleBlobDetector, to which you adjust the parameters and then get the key points (centers) of such detected blobs. In this case, an area filter is done for the blobs.
 
-    - Source (2): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection-regions/circle-centroid-detection-regions/circle-centroid-detection-regions.cpp
+- Source (2): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection-blobs/circle-centroid-detection-blobs/circle-centroid-detection-blobs.cpp
 
-    - What is a **blob**? A blob is a group of connected pixels that share a property, like the grayscale value. 
+- What is a **blob**? A blob is a group of connected pixels that share a property, like the grayscale value, an specific area, etc.
+
+Status: Considered
+
+3. The third option is to use Region Detection, and through an area threshold applied to the contours found on the photo, mark it as either an outer centroid or an inner centroid. This process seemed to work nice.
+
+    - Source (3): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/circle-centroid-detection-regions/circle-centroid-detection-regions/circle-centroid-detection-regions.cpp
 
     - What is the **centroid** of a shape? It is the mean (average) of all the points, in this case pixels, in a shape.
 
@@ -35,9 +42,13 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 
     The M_10 refers to the calculation that, for every white pixel, the accumulated value is j^1 * i^0 * (pixel / 255). Corresponding subindex refer to the power to which j and i are elevated.
 
-3. The third option was to try and fit an ellipse to the found contours that once again fell in the estimated areas for outer and inner circles, and then mark the centers of both. This was similar to the previous step, which also works nice.
+Status: Considered
 
-    - Source (3): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/centroid-detection-ellipse/centroid-detection-ellipse/centroid-detection-ellipse.cpp
+4. The fourth option was to try and fit an ellipse to the found contours that once again fell in the estimated areas for outer and inner circles, and then mark the centers of both. This was similar to the previous step, which also works nice.
+
+    - Source (4): https://github.com/the-other-mariana/vision/blob/master/centroid-detection/centroid-detection-ellipse/centroid-detection-ellipse/centroid-detection-ellipse.cpp
+
+Status: Considered
 
 ### Detected Centroids (2, 3)
 ----
@@ -48,18 +59,6 @@ Source: https://github.com/the-other-mariana/vision/blob/master/centroid-detecti
 ----
 
 ![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/detections.png?raw=true)
-
-## Error Plot
-
-If we compute the difference between both detected centroids in each of the three approaches, we will get an estimated error. Now, if we plot an histogram of these continuous error values by dividing the range in intervals and recording the frecuency of these errors inside the intervals, we would get the following plots. In this way, we can observe the distributions of the errors within the three 'equivalent' approaches.
-
-### Grid Form
-
-![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/histograms/plots-grid.png?raw=true)
-
-### Single Plot Form
-
-![img](https://github.com/the-other-mariana/vision/blob/master/centroid-detection/histograms/sidebars.png?raw=true)
 
 ## Handy Links
 

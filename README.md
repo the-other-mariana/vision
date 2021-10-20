@@ -51,4 +51,6 @@ int main()
 
 4. [Sinusoidal Pattern Generation](https://github.com/the-other-mariana/vision/tree/master/phase-shifting-sinusoidal-code)
 
-5. [Centroid Detection for Camera Calibration](https://github.com/the-other-mariana/vision/tree/master/centroid-detection)
+5. [Pattern Detection for Camera Calibration](https://github.com/the-other-mariana/vision/tree/master/centroid-detection)
+
+5. [Pattern Detection Algorithm Evaluation](https://github.com/the-other-mariana/vision/tree/master/algorithm-evaluation)
