@@ -8,7 +8,7 @@ bars = 20
 def distance(p1, p2):
     return sqrt((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2)
 
-files = ['blobs.txt', 'regions.txt', 'ellipse.txt']
+files = ['blobsside4504.txt', 'regionsside4502.txt', 'ellipseside4502.txt']
 titles = ["Blob Detection Error Plot", "Region Detection Error Plot", "Ellipse Detection Error Plot"]
 labels = ["Blob Error", "Region Error", "Ellipse Error"]
 colors = [(0,0,1,0.5), (1,0,0,0.5), (0,1,0,0.5)]
@@ -29,31 +29,29 @@ for f in range(3):
     file1 = open(files[f], 'r')
     lines = file1.readlines()
 
-    inner_c = []
-    outer_c = []
+    centers = []
     for i in range(len(lines)):
         c = lines[i].split(';')
-        if i % 2 == 0:
-            inner_c.append([float(c[0]), float(c[1])])
-        if i % 2 == 1:
-            outer_c.append([float(c[0]), float(c[1])])
+        centers.append([float(c[0]), float(c[1])])
 
     eps = 10
     pairs = []
     err = []
-    for i in range(len(inner_c)):
-        c = inner_c[i]
-        for j in range(len(outer_c)):
-            dist = distance(c, outer_c[j])
+    for i in range(len(centers)):
+        c = centers[i]
+        for j in range(len(centers)):
+            if j == i:
+                continue
+            dist = distance(c, centers[j])
             if dist < eps:
-                pairs.append([c, outer_c[j]])
+                pairs.append([c, centers[j]])
                 err.append(dist)
-    print(err)
+    print(f"{labels[f]}", err)
 
-    if f == 0:
-        intervals = np.linspace(min(err), max(err) * 1.5, bars)
-        intervals = list(intervals)
-        intervals = [0.0] + intervals
+    #if f == 0:
+    intervals = np.linspace(min(err), max(err) * 1.5, bars)
+    intervals = list(intervals)
+    intervals = [0.0] + intervals
 
     heights = [0 for i in intervals[1:]]
     xs = list(range(len(heights)))
