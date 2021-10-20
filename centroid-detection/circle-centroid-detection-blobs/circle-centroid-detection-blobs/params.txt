@@ -1,0 +1,3 @@
+center 1600
+front45 1600
+side4504 900

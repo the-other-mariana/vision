@@ -1,0 +1,15 @@
+center i % 2 == 0
+int outMax = 10000;
+int outMin = 1750;
+int inMax = 1700;
+int inMin = 12;
+front45 i % 2 == 1
+    int outMax = 15000;
+    int outMin = 1370;
+    int inMax = 1370;
+    int inMin = 12;
+side45 i % 2 == 1
+    int outMax = 15000;
+    int outMin = 1300;
+    int inMax = 1300;
+    int inMin = 12;

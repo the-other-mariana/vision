@@ -26,22 +26,22 @@ string getFilename(string id) {
 
 int main(int argc, char** argv)
 {
-    const int w = 1152;
-    const int h = 864;
+    const int w = 1920;
+    const int h = 1080;
     const int hCircles = 8;
     const int vCircles = 6;
 
-    int outMax = 7000;
-    int outMin = 1450;
-    int inMax = 1400;
+    int outMax = 10000;
+    int outMin = 1750;
+    int inMax = 1700;
     int inMin = 12;
 
-    string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
-    Mat img = imread("pattern-photos/" + pics[1], 1);
+
+    string pics[5] = { "center", "front45", "front60", "side4502", "side60" };
+    string option = pics[0];
+    Mat img = imread("test-renders/" + option + ".png", 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
-    Size size(w, h);// aspect ratio 3:4
-    resize(img, img, size);//resize image
     Mat img_gray;
     Mat binary;
     cvtColor(img, img_gray, COLOR_BGR2GRAY);
@@ -88,14 +88,18 @@ int main(int argc, char** argv)
         
     }
 
-    ofstream out("ellipse.txt");
+    ofstream out("regions" + option + ".txt");
+    cout << "op:" << op.size() << endl;
+    cout << "ip:" << ip.size() << endl;
     for (int i = 0; i < op.size(); i++) {
         cout << i << op[i].x << ", " << op[i].y << endl;
+        string os = to_string(op[i].x) + ";" + to_string(op[i].y) + "\n";
+        out << os;
+    }
+    for (int i = 0; i < ip.size(); i++) {
         cout << i << ip[i].x << ", " << ip[i].y << endl;
         string is = to_string(ip[i].x) + ";" + to_string(ip[i].y) + "\n";
-        string os = to_string(op[i].x) + ";" + to_string(op[i].y) + "\n";
         out << is;
-        out << os;
     }
     out.close();
 

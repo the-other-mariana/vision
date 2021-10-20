@@ -26,23 +26,22 @@ string getFilename(string id) {
 
 int main(int argc, char** argv)
 {
-    const int w = 1152;
-    const int h = 864;
+    const int w = 1920;
+    const int h = 1080;
     const int hCircles = 8;
     const int vCircles = 6;
     Scalar colorOuter = Scalar(255, 0, 255);
     Scalar colorInner = Scalar(255, 0, 0);
 
-    int outMax = 7000;
-    int outMin = 2000;
-    int inMax = 1500;
+    int limit = 900;
 
-    string pics[3] = { "1.jpg", "2.jpg", "3.jpg" };
-    Mat img = imread("pattern-photos/" + pics[1], 1);
+    string pics[5] = { "center", "front45", "front60", "side4504", "side60" };
+    string option = pics[1];
+    Mat img = imread("test-renders/" + option + ".png", 1);
     Mat centroids(h, w, CV_8UC3, Scalar(255, 255, 255));
 
-    Size size(w, h);// aspect ratio 3:4
-    resize(img, img, size);//resize image
+    //Size size(w, h);// aspect ratio 3:4
+    //resize(img, img, size);//resize image
 
 
     Mat img_gray;
@@ -52,12 +51,13 @@ int main(int argc, char** argv)
     GaussianBlur(img_gray, img_gray, Size(9, 9), 2, 2);
     threshold(img_gray, binary, 150, 255, THRESH_BINARY);
 
+    // inner circles: blue
     SimpleBlobDetector::Params params1;
     params1.filterByColor = false;
     params1.minThreshold = 50;
     params1.maxThreshold = 255;
     params1.filterByArea = true;
-    params1.maxArea = 750;
+    params1.maxArea = limit;
     params1.filterByCircularity = false;
     params1.filterByConvexity = false;
     params1.filterByInertia = false;
@@ -68,6 +68,7 @@ int main(int argc, char** argv)
     bitwise_not(img_gray, img_gray_inv);
     detector1->detect(img_gray, pts_inner);
     for (int i = 0; i < pts_inner.size(); i++) {
+        cout << pts_inner[i].size << endl;
         KeyPoint k = pts_inner[i];
         Point center = Point(k.pt.x, k.pt.y);
         ip[i] = k.pt;
@@ -75,17 +76,17 @@ int main(int argc, char** argv)
         circle(img, center, k.size / 2.0, colorInner, 2, 8, 0);
         drawMarker(img, center, colorInner, MARKER_TILTED_CROSS, 10, 2, 8);
         drawMarker(centroids, center, colorInner, MARKER_TILTED_CROSS, 10, 2, 8);
-        circle(img_gray_inv, center, k.size, color, FILLED, 8, 0);
+        circle(img_gray_inv, center, k.size * 0.70, color, FILLED, 8, 0);
 
     }
 
-
+    // outer circles: magenta
     SimpleBlobDetector::Params params2;
     params2.filterByColor = false;
     params2.minThreshold = 80;
     params2.maxThreshold = 255;
     params2.filterByArea = true;
-    params2.minArea = 750;
+    params2.minArea = limit;
     //params2.maxArea = 1500;
     params2.filterByCircularity = false;
     params2.filterByConvexity = false;
@@ -104,7 +105,7 @@ int main(int argc, char** argv)
         drawMarker(centroids, center, colorOuter, MARKER_CROSS, 10, 2, 8);
     }
 
-    ofstream out("blobs.txt");
+    ofstream out("blobs" + option + ".txt");
 
     for (int i = 0; i < 48; i++) {
         cout << i << " " << ip[i].x << ", " << ip[i].y << endl;
@@ -119,10 +120,16 @@ int main(int argc, char** argv)
     string patternImg = getFilename("pattern");
     string centroidImg = getFilename("centroids");
 
-    namedWindow("Detection", WINDOW_AUTOSIZE);
+    namedWindow("Detection", WINDOW_NORMAL);
     imshow("Detection", centroids);
 
-    namedWindow("Image", WINDOW_AUTOSIZE);
+    namedWindow("Binary", WINDOW_NORMAL);
+    imshow("Binary", binary);
+
+    namedWindow("Inverted", WINDOW_NORMAL);
+    imshow("Inverted", img_gray_inv);
+
+    namedWindow("Image", WINDOW_NORMAL);
     imshow("Image", img);
 
     imwrite(patternImg, img);
