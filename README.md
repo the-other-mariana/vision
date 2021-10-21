@@ -65,4 +65,8 @@ int main()
 
 5. [Pattern Detection Algorithm Evaluation](https://github.com/the-other-mariana/vision/tree/master/algorithm-evaluation)
 
+![img](https://github.com/the-other-mariana/vision/blob/master/algorithm-evaluation/histograms/out/condensed-center.png?raw=true)
+
+![img](https://github.com/the-other-mariana/vision/blob/master/algorithm-evaluation/histograms/out/condensed-front-tilt.png?raw=true)
+
 ![img](https://github.com/the-other-mariana/vision/blob/master/algorithm-evaluation/histograms/out/condensed-side-tilt.png?raw=true)
