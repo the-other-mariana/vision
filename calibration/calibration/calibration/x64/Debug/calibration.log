@@ -1,0 +1,24 @@
+﻿  calibration.cpp
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(135,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(136,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(140,36): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(140,32): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(141,36): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(141,32): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+  calibration.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\x64\Debug\calibration.exe
