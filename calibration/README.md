@@ -27,3 +27,33 @@ By running the calibration sample with the opencv input images, we get a view:
 And if we plot the error scatter with a scale factor of 1000:
 
 ![img](https://github.com/the-other-mariana/vision/blob/master/calibration/res/plot.png?raw=true)
+
+## Handy Links
+
+### Hierarchical Clustering
+
+![img](res/hc.png)
+
+circlesgrid.cpp (line 125):
+
+```c++
+//the largest cluster can have more than pn points -- we need to filter out such situations
+if(clusters[patternClusterIdx].size() != static_cast<size_t>(patternSz.area()))
+{
+    return;
+}
+```
+
+Then in the function:
+
+```c++
+void CirclesGridClusterFinder::getSortedCorners()
+```
+
+it seems that the sorting is based on distances from the centers to the corners found (squares' corners) and then they use that distance to know the orientation of the lines (clockwise / counterclock wise) and they find the `firstCorner` (line 329). They search for this `firstCorner` inside the convex hull of all the points, they start a loop from that index and over the convex hull sorted points, and they push them to the final sortedCorners vector (line 339).
+
+To our pattern, it seems like also this function is useful:
+
+```c++
+bool CirclesGridFinder::findHoles()
+```
