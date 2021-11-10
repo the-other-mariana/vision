@@ -30,4 +30,19 @@ C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibra
           [
               _Tp=int
           ]
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(197,92): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(199,92): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\calibration\calibration.cpp(202,90): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
   calibration.vcxproj -> C:\Users\mariana\Documents\github-mariana\vision\calibration\calibration\x64\Debug\calibration.exe
