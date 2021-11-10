@@ -9,6 +9,7 @@
 #include <cctype>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <time.h>
 #include <iostream>
 
@@ -108,6 +109,24 @@ static double computeReprojectionErrors(
     Mat plot(h, w, CV_8UC3, Scalar(255, 255, 255));
     int factor = 1000;
     int size = 2;
+    const int colorSize = 20;
+    Scalar axisColor = Scalar(100, 100, 100);
+    int tickSize = 5;
+    int minX = 0, maxX = 0, minY = 0, maxY = 0;
+
+    Scalar colors[colorSize];
+    srand(time(NULL));
+    for (int c = 0; c < colorSize; c++) {
+        int r = rand() % 255 + 1;
+        int g = rand() % 255 + 1;
+        int b = rand() % 255 + 1;
+        colors[c] = Scalar(r, g, b);
+    }
+
+    // horizontal axis
+    line(plot, Point(0, h / 2), Point(w, h / 2), axisColor, 2, LINE_4);
+    // vertical axis
+    line(plot, Point(w/2, 0), Point(w/2, h), axisColor, 2, LINE_4);
 
     for (i = 0; i < (int)objectPoints.size(); i++)
     {
@@ -121,6 +140,8 @@ static double computeReprojectionErrors(
         // calculate the difference of each point for x and y, that will be your coordinate in the plot
         // center the plot at the center of the image
 
+        
+
         for (int j = 0; j < imagePoints2.size(); j++) {
             Point2f pp = imagePoints2[j];
             Point2f ip = imagePoints[i][j];
@@ -128,18 +149,40 @@ static double computeReprojectionErrors(
             float dx = pp.x - ip.x;
             float dy = pp.y - ip.y;
 
+            //cout << dx << endl;
+            //cout << dy << endl;
             dx = dx * factor;
             dy = dy * factor;
-
+            
             // center in middle of mat
             float cx = (dx + (w / 2.0));
             float cy = ((h / 2.0) - dy);
-            //cout << dx << endl;
-            //cout << dy << endl;
+            
+            if (i == 0) {
+                minX = cx;
+                minY = cy;
+                maxX = cx;
+                maxY = cy;
+            }
+            if (cx < minX) {
+                minX = cx;
+            }
+            if (cy < minY) {
+                minY = cy;
+            }
+            if (cx > maxX) {
+                maxX = cx;
+            }
+            if (cy > maxY) {
+                maxY = cy;
+            }
+
 
             circle(plot, Point(cx, cy), 2, Scalar(0, 0, 0), size + 2*size, 8, 0);
-            circle(plot, Point(cx, cy), 2, Scalar(255, 0, 0), size, 8, 0);
+            circle(plot, Point(cx, cy), 2, colors[i % colorSize], size, 8, 0);
         }
+
+
 
         err = norm(Mat(imagePoints[i]), Mat(imagePoints2), NORM_L2);
         int n = (int)objectPoints[i].size();
@@ -147,6 +190,15 @@ static double computeReprojectionErrors(
         totalErr += err * err;
         totalPoints += n;
     }
+    //circle(plot, Point(minX, h / 2), 2, axisColor, size + 2 * size, 8, 0);
+    line(plot, Point(minX, h / 2 + tickSize), Point(minX, h / 2 - tickSize), axisColor, 2, LINE_4);
+    //circle(plot, Point(maxX, 0), 2, axisColor, size + 2 * size, 8, 0);
+    line(plot, Point(maxX, h / 2 + tickSize), Point(maxX, h / 2 - tickSize), axisColor, 2, LINE_4);
+
+    //circle(plot, Point(w / 2, minY), 2, axisColor, size + 2 * size, 8, 0);
+    line(plot, Point(w / 2 - tickSize, minY), Point(w / 2 + tickSize, minY), axisColor, 2, LINE_4);
+    //circle(plot, Point(w / 2, maxY), 2, axisColor, size + 2 * size, 8, 0);
+    line(plot, Point(w / 2 - tickSize, maxY), Point(w / 2 + tickSize, maxY), axisColor, 2, LINE_4);
     imwrite("plot.png", plot);
 
     return std::sqrt(totalErr / totalPoints);
