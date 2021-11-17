@@ -194,14 +194,14 @@ static double computeReprojectionErrors(
     putText(plot,"Scale Factor: "+ to_string(factor), Point(gap, gap*4), FONT_HERSHEY_TRIPLEX, 0.75, axisColor, 1);
 
     line(plot, Point(minX, h / 2 + tickSize), Point(minX, h / 2 - tickSize), axisColor, 2, LINE_4);
-    putText(plot, to_string(minX / (factor * 1.0)), Point(minX - gap * 4, h / 2 - tickSize - gap * 1.5), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
+    putText(plot, to_string((minX - (w / 2.0)) / factor), Point(minX - gap * 4, h / 2 - tickSize - gap * 1.5), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
     line(plot, Point(maxX, h / 2 + tickSize), Point(maxX, h / 2 - tickSize), axisColor, 2, LINE_4);
-    putText(plot, to_string(maxX / (factor * 1.0)), Point(maxX - gap * 4, h / 2 - tickSize - gap * 1.5), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
+    putText(plot, to_string((maxX - (w / 2.0)) / factor), Point(maxX - gap * 4, h / 2 - tickSize - gap * 1.5), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
 
     line(plot, Point(w / 2 - tickSize, minY), Point(w / 2 + tickSize, minY), axisColor, 2, LINE_4);
-    putText(plot, to_string(minY / (factor * 1.0)), Point(w / 2 - tickSize - gap*8, minY - gap * 1.5), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
+    putText(plot, to_string(((h / 2.0) - minY) / factor ), Point(w / 2 - tickSize - gap*8, minY - gap * 1.5), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
     line(plot, Point(w / 2 - tickSize, maxY), Point(w / 2 + tickSize, maxY), axisColor, 2, LINE_4);
-    putText(plot, to_string(maxY / (factor * 1.0)), Point(w / 2 - tickSize - gap * 8, maxY + gap * 2), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
+    putText(plot, to_string(((h / 2.0) - maxY) / factor), Point(w / 2 - tickSize - gap * 8, maxY + gap * 2), FONT_HERSHEY_COMPLEX, 0.50, axisColor, 1);
     imwrite("plot.png", plot);
 
     return std::sqrt(totalErr / totalPoints);
