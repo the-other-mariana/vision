@@ -28,7 +28,7 @@ And if we plot the error scatter with a scale factor of 1000:
 
 ![img](https://github.com/the-other-mariana/vision/blob/master/calibration/res/plot.png?raw=true)
 
-## Handy Links
+## How does OpenCV Calibrates
 
 ### Hierarchical Clustering
 
@@ -60,7 +60,7 @@ bool CirclesGridFinder::findHoles()
 
 ## Customizing OpenCV
 
-1. Create a Visual Studio Project and configure it for OpenCV [[Tutorial Here]]()
+1. Create a Visual Studio Project and configure it for OpenCV [[Tutorial Here]](https://github.com/the-other-mariana/image-processing-algorithms#usage)
 
 2. Go to OpenCV source folder and grab the function `findCirclesGrid()` from `calibinit.cpp` at `C:\OpenCV-4.2.0\opencv\sources\modules\calib3d\src\calibinit.cpp` that is at line 2183:
 
