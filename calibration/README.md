@@ -60,7 +60,7 @@ bool CirclesGridFinder::findHoles()
 
 ## Customizing OpenCV
 
-1. Create a Visual Studio Project and configure it for OpenCV [[Tutorial Here]](https://github.com/the-other-mariana/image-processing-algorithms#usage)
+1. Create a Visual Studio Project and configure it for OpenCV. [[Tutorial Here]](https://github.com/the-other-mariana/image-processing-algorithms#usage)
 
 2. Go to OpenCV source folder and grab the function `findCirclesGrid()` from `calibinit.cpp` at `C:\OpenCV-4.2.0\opencv\sources\modules\calib3d\src\calibinit.cpp` that is at line 2183:
 
@@ -189,7 +189,7 @@ static int quiet_error(int /*status*/, const char* /*func_name*/,
 }
 ```
 
-3. Paste this function from `calibinit.cpp` into a Source.cpp from the Source Files folder of your project.
+3. Paste these 2 functions plus headers from `calibinit.cpp` into a Source.cpp from the Source Files folder of your project.
 
 4. Copy the following files from `C:\OpenCV-4.2.0\opencv\sources\modules\calib3d\src`:
 
