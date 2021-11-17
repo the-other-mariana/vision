@@ -243,3 +243,5 @@ static int quiet_error(int /*status*/, const char* /*func_name*/,
 ```
 
 And paste it in Source.cpp below the headers, so that `CV_INSTRUMENT_REGION();` used in `findCirclesGridNew()` is defined.
+
+10. Code the new function: `detectNew()` in Source.cpp file.
