@@ -1,4 +1,5 @@
 #include "opencv2/core.hpp"
+#include "Source.hpp"
 #include <opencv2/core/utility.hpp>
 #include "opencv2/imgproc.hpp"
 #include "opencv2/calib3d.hpp"
@@ -598,10 +599,10 @@ int main(int argc, char** argv)
                 CALIB_CB_ADAPTIVE_THRESH | CALIB_CB_FAST_CHECK | CALIB_CB_NORMALIZE_IMAGE);
             break;
         case CIRCLES_GRID:
-            found = findCirclesGrid(view, boardSize, pointbuf);
+            found = findCirclesGridNew(view, boardSize, pointbuf);
             break;
         case ASYMMETRIC_CIRCLES_GRID:
-            found = findCirclesGrid(view, boardSize, pointbuf, CALIB_CB_ASYMMETRIC_GRID);
+            found = findCirclesGridNew(view, boardSize, pointbuf, CALIB_CB_ASYMMETRIC_GRID);
             break;
         default:
             return fprintf(stderr, "Unknown pattern type\n"), -1;

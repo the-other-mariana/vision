@@ -235,3 +235,9 @@ bool findCirclesGridNew(InputArray _image, Size patternSize,
     Mat(centers).copyTo(_centers);
     return false;
 }
+bool findCirclesGridNew(InputArray _image, Size patternSize,
+    OutputArray _centers, int flags = CALIB_CB_SYMMETRIC_GRID,
+    const Ptr<FeatureDetector>& blobDetector = SimpleBlobDetector::create())
+{
+    return findCirclesGridNew(_image, patternSize, _centers, flags, blobDetector, CirclesGridFinderParameters());
+}
